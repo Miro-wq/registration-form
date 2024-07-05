@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+    background-size: cover;
+    background-image: url(/images/black-background-metal-wallpaper-3213bf4463cde175069da4c0c862c0ad.jpg);
+  }
+
+  form {
+    background: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="button"]:hover {
+    background-color: #45a049;
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+    color: #f2f2f2;
+  }
+
+.input-fields,
+.check {
+    list-style: none;
+}
+
+.check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    justify-content: center;
+}
+
+.for-img {
+    background-size: cover;
+    background-image: url(/images/call-of-duty-modern-warfare-3-call-of-duty-wallpaper-79e078ad81fa9dcbf63798af2061d6ed.jpg);
+}
+
+.regul {
+    text-decoration: underline;
+}
+
+.regulation {
+    max-width: 80%;
+    /* border: 3px solid red; */
+    border-radius: 3px;
+    margin: 0 auto;
+    line-height: 1.5;
+    background-color: #9ba59b57;
+    padding: 30px;
+}
+
+
+.submit {
+    display: flex;
+    list-style: none;
+    /* border: 3px solid blue; */
+    justify-content: center;
+    padding: 10px;
+}
+
+.send-btn {
+    padding: 15px;
+    background-color: #45a049;
+    border: none;
+    border-radius: 5px;
+}
+
+.assume {
+    width: 89%;
+    /* border: 3px solid red; */
+    margin: 0 auto;
+    padding-top: 7px;
+    color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+}

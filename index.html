@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css"/>
+    <title>Formular inregistrare</title>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>Formular inregistrare eveniment!</h1>
+        </header>
+            <form>
+                <ul>
+                    <li class="input-fields">
+                        <label for="name">Nume si prenume</label>
+                        <input type="text" id="name" name="username" class="focus" required/>
+                    </li>
+                    <li class="input-fields">
+                        <label for="phone">Numar telefon contact</label>
+                        <input type="number" id="phone" name="phone-number" class="focus" required/>
+                    </li>
+                    <li class="input-fields">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="focus" required/>
+                    </li>
+                    <li class="input-fields">
+                        <label for="age">Varsta</label>
+                        <input type="number" id="age" name="age" class="focus" required />
+                    </li>
+                    <li class="input-fields">
+                        <label for="city">Orasul de resedinta</label>
+                        <input type="text" id="city" name="city" class="focus" required />
+                    </li>
+                    <li class="input-fields">
+                        <label for="date">Data completarii</label>
+                        <input type="date" name="bday" id="start_date"/>
+                        <script>
+                            function formatDate(date) {
+                                let day = String(date.getDate()).padStart(2, '0');
+                                let month = String(date.getMonth() + 1).padStart(2, '0');
+                                let year = date.getFullYear();
+                                return `${year}-${month}-${day}`;
+                            }
+                    
+                            const today = new Date();
+                            const formattedDate = formatDate(today);
+                            const dateInput = document.getElementById('start_date');
+                            dateInput.value = formattedDate;
+                            dateInput.readOnly = true;
+                        </script>
+                    </li>
+                    <li class="check">
+                        <input type="checkbox" name="accept" id="checkbox" required>
+                        <label for="checkbox">Imi asum <a href="/regulation.html" class="link" target="_blank"
+                            rel="noreferrer noopener">regulamentul</a> si il voi respecta.</label>
+                    </li>
+<li class="submit">
+    <button type="submit" class="send-btn">Inscriere</button>
+</li>
+                </ul>
+            </form>
+        </div>
+        <div class="assume">
+            <h3>*Prin acceptarea inscrierii jucatorul isi asuma raspunderea pentru corectitudinea datelor si isi da acordul ca datele inscrise de el pot fi folosite de organizatori in conformitate cu normele GDPR. </h3>
+        </div>
+        <!-- <script defer src="/date.js"></script> -->
+</body>
+</html>
