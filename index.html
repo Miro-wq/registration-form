@@ -7,6 +7,9 @@
     <title>Formular înregistrare</title>
 </head>
 <body>
+    <div class="disable"> <!--offline mod, to be commented when online-->
+        <h1 class="offline">MOMENTAN, NU SUNT EVENIMENTE IN CURS.</h1>
+    </div> <!--END-->
     <header>
         <div class="title">
             <h1>Formular înregistrare eveniment!</h1>
@@ -51,13 +54,19 @@
                     dateInput.readOnly = true;
                 </script>
             </li>
+            <li class="input-fields">
+                <label for="random-number">Număr unic</label>
+                <input type="text" id="random-number" name="random-number" class="focus" readonly required/>
+                <p class="info">*In momentul inscrierii la eveniment, va veti prezenta cu buletinul si codul unic de mai sus. </p>
+            </li>
             <li class="check">
                 <input type="checkbox" name="accept" id="checkbox" required>
                 <label for="checkbox">Îmi asum <a href="regulation.html" class="link">regulamentul</a> și îl voi respecta.</label>
             </li>
-            <li class="submit">
+            <!--to de commented when online-->
+            <!-- <li class="submit">
                 <button type="submit" id="submit" class="send-btn">Înscriere</button>
-            </li>
+            </li> -->
         </ul>
     </form>
     <div class="assume">
@@ -67,7 +76,31 @@
         const form = document.querySelector("#form");
         const submitButton = document.querySelector("#submit");
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwVKt0ntdPHx7C3Nb03rUPy3Kmfp6yvStBLviqaBVvRJhx6sLeJ1D7C2hhd5lKa5WB8-w/exec';
-     
+
+        function validatePhoneNumber() {
+            const phoneInput = document.getElementById('phone');
+            phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '');
+        }
+
+        function generateRandomNumber() {
+            let randomNum = '';
+            const numbers = new Set();
+            while (numbers.size < 4) {
+                numbers.add(Math.floor(Math.random() * 10));
+            }
+            randomNum = Array.from(numbers).join('');
+            return randomNum;
+        }
+
+        function fillRandomNumber() {
+            const randomNumberInput = document.getElementById('random-number');
+            randomNumberInput.value = generateRandomNumber();
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            fillRandomNumber();
+        });
+
         form.addEventListener('submit', e => {
           submitButton.disabled = true;
           e.preventDefault();
@@ -82,11 +115,6 @@
               submitButton.disabled = false;
             });
         });
-
-        function validatePhoneNumber() {
-            const phoneInput = document.getElementById('phone');
-            phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '');
-        }
     </script>
 </body>
 </html>
